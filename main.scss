@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.own-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+@mixin text($size: 28px, $weight: 400) {
+  font-family: Roboto Condensed, serif;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+header {
+  align-content: center;
+  box-sizing: border-box;
+  padding: 10px;
+  color: black;
+}
+
+.header-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include text(36px, 400);
+
+  nav {
+    a {
+      margin: 0 10px;
+    }
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: Ribeye Marrow, serif;
+  font-size: 36px;
+
+  img {
+    max-width: 77px;
+  }
+}
+
+.login-container {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    @include text(36px, 400);
+    outline: none;
+    border: none;
+    background: transparent;
+  }
+}
+
+.menu-burger-img {
+  position: fixed;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+body, html{
+  background: #DCDCDC;
+}
+
+.fixed-menu {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 200px;
+  padding: 20px 10px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  width: 90%;
+  height: min-content;
+
+  .lesson-data-section {
+    .lesson-data {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      b {
+        @include text(32px, 700);
+        line-height: 34px;
+      }
+
+      span {
+        @include text(14px, 300);
+        color: #4D4D4D;
+      }
+    }
+  }
+
+  button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF6767;
+    @include text(24px, 700);
+    color: whitesmoke;
+  }
+
+  .lesson-reservation-data {
+    margin-top: 20px;
+
+    img {
+      width: 20%;
+    }
+
+    @include text(18px);
+
+    span {
+      margin-left: 10px;
+      line-height: 20px;
+    }
+  }
+}
+
+.dark-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(65, 65, 65, 0.75);
+  z-index: 2;
+}
+
+.white-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #DCDCDC;
+  z-index: 2;
+}
+
+.nav-pop-up {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  z-index: 3;
+  @include text(36px);
+  .close-cross {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    top:0;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    a{
+      margin: 10px 0;
+    }
+  }
+}
+
+.sign-up-pop-up {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 250px;
+  align-items: center;
+  width: 480px;
+  z-index: 3;
+
+  .sign-up-menu {
+    padding-top: 85px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: whitesmoke;
+    border-radius: 10px;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: -75px;
+      border-radius: 100%;
+      width: 150px;
+      height: 150px;
+    }
+
+    .top-text {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      @include text(20px);
+      color: gray;
+      width: 80%;
+
+      span:nth-child(1) {
+        @include text(36px);
+        color: black;
+      }
+    }
+
+    .fb {
+      margin-top: 10px;
+
+      .fb-login-button {
+        width: 100%;
+      }
+    }
+
+    .google {
+      margin-top: 10px;
+    }
+
+    .bottom-text {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      width: 80%;
+
+      label {
+        margin-top: 10px;
+        @include text(20px);
+        color: gray;
+      }
+
+      input {
+        margin-top: 10px;
+        text-align: center;
+        border-radius: 5px;
+        width: 100%;
+        height: 46px;
+      }
+
+      button {
+        margin-top: 10px;
+        border: black solid 1px;
+        border-radius: 5px;
+        background: #7EFFF0;
+        width: 100%;
+        @include text(28px);
+        color: black;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+
+      span {
+        @include text(14px);
+        color: black;
+      }
+    }
+  }
+}
+
+.main-about-section {
+  margin-top: 50px;
+
+  .tutor-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 80%;
+    }
+  }
+
+  .main-about-text {
+    margin-left: 20px;
+
+    .person-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      width: 35px;
+      padding-right: 5px;
+    }
+
+    .tutor-name {
+      @include text(46px);
+    }
+
+    .short-tutor-desc {
+      @include text(28px, 300);
+    }
+  }
+}
+
+
+.specs {
+  @include text(24px);
+
+  img {
+    width: 35px;
+    padding-right: 5px;
+  }
+}
+
+.achievement {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background: whitesmoke;
+  border-radius: 20px;
+
+  img {
+    height: 64px;
+  }
+
+  .achievement-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include text(24px);
+}
+
+.tutor-self-desc-section {
+  margin-top: 20px;
+
+  .tutor-self-desc-text {
+    text-align: left;
+    border-bottom: 2px solid rgba(0, 0, 0, .3);
+    @include text(28px);
+  }
+}
+
+.feedback-section {
+  margin-top: 20px;
+
+  .section-declaration {
+    padding-bottom: 20px;
+  }
+
+  .feedback-rating {
+    border-bottom: 2px solid rgba(0, 0, 0, .3);
+
+    .general-rating {
+      @include text(32px);
+    }
+
+    .reviews-counter {
+      width: 50%;
+    }
+
+    .general-mark {
+      width: 50%;
+      text-align: right;
+    }
+
+    .rating-row {
+      justify-content: space-between;
+      align-items: center;
+      @include text(28px);
+
+      span:nth-child(1) {
+        text-align: left;
+        width: 10%;
+      }
+
+      span:nth-last-child(1) {
+        text-align: right;
+        width: 5%;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 15px;
+        border-radius: 10px;
+        background-color: gray;
+      }
+    }
+  }
+
+  .user-row {
+    margin-top: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, .3);
+    padding-bottom: 10px;
+
+    img {
+      width: 100%;
+    }
+
+    .user-row-content {
+      margin-left: 10px;
+      @include text(24px);
+
+      .main-user-data {
+        span {
+          display: block
+        }
+
+        span:nth-child(1) {
+          @include text(28px, 700);
+        }
+
+        span:nth-last-child(1) {
+          color: gray;
+        }
+      }
+    }
+  }
+
+}
+
+.section-declaration {
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, .3);
+  @include text(36px);
+
+  b {
+    margin-left: 25px;
+  }
+}
+
+footer {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  background-color: #4D4D4D;
+  @include text(14px, 300);
+  color: #cecece;
+}
+
+.desktop {
+}
+
+.mobile {
+}
+
+@function vh($px-vh, $base-vh: 720px) {
+  @return ($px-vh * 100vw) / $base-vh;
+}
+
+@function calculateTopMarginForBottomStick($height-px) {
+  @return calc(100vh - $height-px);
+}
+
+@media screen and (max-width: 1024px) {
+  .desktop {
+    display: none;
+  }
+  .fixed-menu {
+    position: fixed;
+    top: 89vh;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    background: #DCDCDC;
+    box-shadow: 0px -5px 4px rgba(0, 0, 0, 0.25);
+  }
+  .main-about-section {
+    flex-direction: column;
+  }
+  .header-links {
+    flex-direction: column;
+    align-content: center;
+  }
+  footer{
+    height: 173px;
+  }
+}
+
+@media screen and (min-width:1025px) {
+  .mobile {
+    display: none;
+  }
+}
+
